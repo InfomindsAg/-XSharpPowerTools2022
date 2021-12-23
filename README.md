@@ -1,20 +1,20 @@
-# X# PowerTools
+# X# PowerTools 2022
 
 ---------------------------------------
 
-A set of tools for [X#](https://www.xsharp.eu) developers
+A set of Visual Studio 2022 tools for [X#](https://www.xsharp.eu) developers
 
 ## Getting started
 
 Get the extension on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=InfomindsAG.XSharpPowerTools).
-Installation requires a minimum Visual Studio Version of 16.10.4 and a minimum X# Version of 2.7.
+Installation requires a minimum Visual Studio Version of 17.0 and a minimum X# Version of 2.7.
 
 ## Features
 
 - Code Browser
 - Find and insert Namespaces
 
-The tools can be found under **Tools>X# Power Tools** or in the editors context menu.
+The tools can be found under **Tools > X# Power Tools** or in the editors context menu.
 
 ![X# Power Tools Commands](Images/ToolsMenu.PNG)
 ![X# Power Tools Commands](Images/ContextMenu.PNG)
