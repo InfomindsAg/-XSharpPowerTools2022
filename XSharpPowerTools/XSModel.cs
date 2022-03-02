@@ -341,8 +341,8 @@ namespace XSharpPowerTools
             command.Parameters.AddWithValue("$fileName", file.Trim().ToLower());
 
             var result = await command.ExecuteScalarAsync() as string;
-            var usings = result.Split(new[] { '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-            return usings.Contains(usingToInsert);
+            var usings = result?.Split(new[] { '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            return usings?.Contains(usingToInsert) == true;
         }
 
         public void CloseConnection()
