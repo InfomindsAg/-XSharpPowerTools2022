@@ -7,7 +7,7 @@ A set of Visual Studio 2022 tools for [X#](https://www.xsharp.eu) developers
 ## Getting started
 
 Get the extension on the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=InfomindsAG.XSharpPowerTools).
-Installation requires a minimum Visual Studio Version of 17.0 and a minimum X# Version of 2.7.
+Installation requires a minimum Visual Studio Version of 17.0 and a minimum X# Version of 2.9.
 
 ## Features
 

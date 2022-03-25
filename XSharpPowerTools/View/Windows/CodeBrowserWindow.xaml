@@ -6,7 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:XSharpPowerTools.View.Windows"
     xmlns:controls="clr-namespace:XSharpPowerTools.View.Controls"
-    xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+    xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"    
+    toolkit:Themes.UseVsTheme="True"
     mc:Ignorable="d"
     Title="X# Code Browser"
     SizeToContent="WidthAndHeight"
@@ -23,13 +24,6 @@
     <WindowChrome.WindowChrome>
         <WindowChrome ResizeBorderThickness="0" CaptionHeight="0" UseAeroCaptionButtons="False"/>
     </WindowChrome.WindowChrome>
-    
-    <local:BaseWindow.Style>
-        <Style TargetType="{x:Type local:BaseWindow}">
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static vsshell:EnvironmentColors.ToolWindowTextBrushKey}}"/>
-            <Setter Property="Background" Value="{DynamicResource {x:Static vsshell:EnvironmentColors.ToolWindowBackgroundBrushKey}}"/>
-        </Style>
-    </local:BaseWindow.Style>
     
     <Border Style="{StaticResource ResourceKey=WindowBorder}">
         <Grid 
@@ -93,7 +87,6 @@
                 Grid.Row="0"
                 Margin="0,3,0,0"
                 Grid.Column="1"
-                Style="{StaticResource ResourceKey=GenericLabel}"
                 FontWeight="DemiBold"/>
             <controls:SearchTextBox
                 x:Name="SearchTextBox"
@@ -146,8 +139,7 @@
                 Grid.Row="3"
                 Content="No results found"
                 Visibility="Collapsed"
-                HorizontalAlignment="Center"
-                Style="{StaticResource GenericLabel}"/>
+                HorizontalAlignment="Center"/>
             <controls:ResultsDataGrid
                 x:Name="ResultsDataGrid"
                 Margin="0,0,0,0"

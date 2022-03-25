@@ -2,12 +2,13 @@
     x:Class="XSharpPowerTools.View.Windows.FindNamespaceWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.15.0"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:toolkit="clr-namespace:Community.VisualStudio.Toolkit;assembly=Community.VisualStudio.Toolkit"
     xmlns:local="clr-namespace:XSharpPowerTools.View.Windows"
     xmlns:controls="clr-namespace:XSharpPowerTools.View.Controls"
     mc:Ignorable="d"
+    toolkit:Themes.UseVsTheme="True"
     Title="X# Find Namespace" 
     SizeToContent="WidthAndHeight"
     WindowStyle="None"
@@ -24,13 +25,6 @@
         <WindowChrome ResizeBorderThickness="0" CaptionHeight="0" UseAeroCaptionButtons="False"/>
     </WindowChrome.WindowChrome>
 
-    <local:BaseWindow.Style>
-        <Style TargetType="{x:Type local:BaseWindow}">
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static vsshell:EnvironmentColors.ToolWindowTextBrushKey}}"/>
-            <Setter Property="Background" Value="{DynamicResource {x:Static vsshell:EnvironmentColors.ToolWindowBackgroundBrushKey}}"/>
-        </Style>
-    </local:BaseWindow.Style>
-    
     <Border Style="{StaticResource ResourceKey=WindowBorder}">
         <Grid 
             x:Name="ContainingGrid"
@@ -88,7 +82,6 @@
                 Grid.Row="0"
                 Grid.Column="1"
                 Margin="0,3,0,0"
-                Style="{StaticResource ResourceKey=GenericLabel}"
                 FontWeight="DemiBold"/>
             <controls:SearchTextBox
                 x:Name="SearchTextBox"
@@ -105,8 +98,7 @@
                 Grid.Row="2"
                 Content="No results found"
                 Visibility="Collapsed"
-                HorizontalAlignment="Center"
-                Style="{StaticResource GenericLabel}"/>
+                HorizontalAlignment="Center"/>
             <controls:ResultsDataGrid
                 x:Name="ResultsDataGrid"
                 Margin="0,0,0,0"
