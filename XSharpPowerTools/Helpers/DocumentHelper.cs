@@ -15,12 +15,19 @@ namespace XSharpPowerTools.Helpers
 
         public static async Task OpenProjectItemAtAsync(string file, int lineNumber)
         {
+            if (string.IsNullOrEmpty(file))
+                return;
+
+            file = file.Trim();
             if (!System.IO.File.Exists(file))
                 return;
 
-            var editorWindow = await VS.Documents.IsOpenAsync(file)
-                ? await VS.Windows.FindDocumentWindowAsync(file)
-                : (await VS.Documents.OpenViaProjectAsync(file))?.WindowFrame ?? (await VS.Documents.OpenAsync(file))?.WindowFrame;
+            WindowFrame editorWindow = null;
+            if (!await VS.Documents.IsOpenAsync(file))
+                editorWindow = (await VS.Documents.OpenViaProjectAsync(file) ?? await VS.Documents.OpenAsync(file))?.WindowFrame;
+
+            if (editorWindow == null)
+                editorWindow = await VS.Windows.FindDocumentWindowAsync(file);
 
             if (editorWindow == null)
             {
